@@ -1,10 +1,10 @@
 name: Allure Report Playwright
 on:
   workflow_dispatch:
-#  push:
-#    branches: [ main, master ]
-#  pull_request:
-#    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
   setup-and-run-tests:
