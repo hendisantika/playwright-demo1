@@ -1,10 +1,10 @@
 name: Allure-Playwright
 on:
   workflow_dispatch:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+#  push:
+#    branches: [ main, master ]
+#  pull_request:
+#    branches: [ main, master ]
 
 jobs:
   setup-and-run-tests:
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-    #      matrix:
-    #        # shard values will be used to run playwright with sharding feature
-    #        shardIndex: [ 1, 2, 3 ]
-    #        shardTotal: [ 3 ]
+      matrix:
+        # shard values will be used to run playwright with sharding feature
+        shardIndex: [ 1, 2, 3 ]
+        shardTotal: [ 3 ]
 
     steps:
       - uses: actions/checkout@v4
