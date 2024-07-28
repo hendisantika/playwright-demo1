@@ -1,5 +1,4 @@
 import {defineConfig, devices} from '@playwright/test';
-import {testPlanFilter} from "allure-playwright/dist/types/testplan";
 
 /**
  * Read environment variables from file.
@@ -22,7 +21,7 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 2 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    grep: testPlanFilter(),
+    // grep: testPlanFilter(),
     reporter: [["line"], ["allure-playwright"]],
     // reporter: 'allure-playwright',
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -50,11 +49,6 @@ export default defineConfig({
             name: 'webkit',
             use: {...devices['Desktop Safari']},
         },
-
-        {
-            name: 'myProject',
-            use: {...devices['Desktop Chrome']},
-        }
 
         /* Test against mobile viewports. */
         // {
