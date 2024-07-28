@@ -12,8 +12,8 @@ jobs:
       fail-fast: false
       matrix:
       #        # shard values will be used to run playwright with sharding feature
-      shardIndex: [ 1, 2, 3 ]
-      shardTotal: [ 3 ]
+        shardIndex: [ 1, 2, 3 ]
+        shardTotal: [ 3 ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
